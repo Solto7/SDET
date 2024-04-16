@@ -56,7 +56,7 @@ public abstract class ApiRequest {
 
     public Response get(String endPoint) {
         log.info("Performed GET {}", endPoint);
-        this.response = RestAssured.given()
+        this.response = given()
                 .spec(requestSpecification)
                 .get(endPoint);
         logResponse();
@@ -65,7 +65,7 @@ public abstract class ApiRequest {
 
     public Response getWithParams(String endPoint, Map<String, String> params) {
         log.info("Performed GET {}", endPoint);
-        this.response = RestAssured.given()
+        this.response = given()
                 .spec(requestSpecification)
                 .params(params)
                 .get(endPoint);
@@ -76,7 +76,7 @@ public abstract class ApiRequest {
     public Response post(String endPoint, String body) {
         log.info("Performed POST {}", endPoint);
         log.info("Body is {}", body);
-        this.response = RestAssured.given()
+        this.response = given()
                 .spec(requestSpecification)
                 .body(body)
                 .post(endPoint);
@@ -90,7 +90,7 @@ public abstract class ApiRequest {
 //                .formParams()
 //                .
 //    }
-
+//
 //    public Response getWithParams(String endPoint, Map<String, String> params) {
 //        log.info("Performed GET {}", endPoint);
 //        this.response = RestAssured.given()

@@ -2,6 +2,7 @@ package com.digitalnomads.test;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.digitalnomads.ui.pages.HomePage;
+import io.qameta.allure.testng.Tag;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,12 +13,14 @@ import static org.testng.AssertJUnit.assertTrue;
 public class TestFood extends BaseTest {
 
     @Test
+    @Tag("Smoke")
     public void  testFoodButtons() {
         homePage.openSite()
                 .clickFoodBtnOnBasePage()
                 .clickFirstElementFromFood();
     }
     @Test
+    @Tag("Regress")
     public void checkKitchAmountTest(){
         homePage.openSite().clickFoodBtnOnBasePage();
         Assert.assertEquals(foodPage.foods.size(),16);

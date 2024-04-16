@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="pojo" />
         <module name="tests" />
-        <module name="ui" />
         <module name="common" />
+        <module name="ui" />
         <module name="mobile" />
         <module name="api" />
         <module name="db" />
